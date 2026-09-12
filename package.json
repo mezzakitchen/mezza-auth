@@ -1,0 +1,42 @@
+{
+  "name": "@mezzakitchen/auth",
+  "version": "1.0.0",
+  "description": "Mezza's standard email-code login for Cloudflare Workers: codes, sessions, cookies, rate limits, login email, login page, hand-off between hostnames. Authentication only \u2014 each application supplies its own users and authorisation.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./schema.sql": "./migrations/0001_auth.sql"
+  },
+  "files": [
+    "dist",
+    "migrations",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mezzakitchen/mezza-auth.git"
+  },
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "prepack": "npm run build",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250601.0",
+    "@types/node": "^22.20.2",
+    "hono": "^4.6.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  }
+}
