@@ -1,6 +1,6 @@
 {
   "name": "@mezzakitchen/auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mezza's standard email-code login for Cloudflare Workers: codes, sessions, cookies, rate limits, login email, login page, hand-off between hostnames. Authentication only \u2014 each application supplies its own users and authorisation.",
   "type": "module",
   "main": "./dist/index.js",

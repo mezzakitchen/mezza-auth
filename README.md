@@ -29,11 +29,12 @@ application supplies `findUser` / `loadUser` (its own directory) and does its ow
 
 ## Install
 
-The repo is public and consumed as a pinned git dependency — no registry, no token:
+The repo is public; `dist/` is committed, and consumers pin a release tarball — no registry, no
+token, no git or ssh in CI:
 ```json
-"dependencies": { "@mezzakitchen/auth": "github:mezzakitchen/mezza-auth#v1.0.0", "hono": "^4.6.0" }
+"dependencies": { "@mezzakitchen/auth": "https://github.com/mezzakitchen/mezza-auth/archive/refs/tags/v1.0.1.tar.gz", "hono": "^4.6.0" }
 ```
-`npm install` clones the tag and runs `prepare` (the TypeScript build). Bump the tag to upgrade.
+Bump the tag in that URL to upgrade. Releasing: `npm run build`, commit `dist/`, bump `version`, tag.
 
 ## Wire it up
 
